@@ -5,6 +5,7 @@ require('dotenv').config();
 
 const { login, signup } = require('../controllers/Auth');
 const { auth } = require('../middleware/auth');
+const getCharts = require('../controllers/getCharts');
 
 router.post('/login', login);
 router.post('/signup', signup);
@@ -126,7 +127,8 @@ router.get('/topCompanies', (req, res) => {
     request.end(); // End the request
 });
 
-
+//requestforchartdata
+router.get('/chartData', getCharts);
 
 
 //protected Route
